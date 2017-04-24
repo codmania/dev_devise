@@ -17,5 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: timeline_production
+  database: ENV['DB_NAME']
   pool: 5
+  username: ENV['DB_USER']
+  password: ENV['DB_PASSWORD']
