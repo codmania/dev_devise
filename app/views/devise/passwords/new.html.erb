@@ -3,10 +3,14 @@
     <h3>Forgot your password?</h3>
     <p>We'll send password reset instructions.</p>
     <%= devise_error_messages! %>
+
     <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
     </div>
-     <%= f.submit 'Reset Password', :class => 'button right' %>
+
+    <div class="actions">
+      <%= f.submit 'Reset Password', :class => 'button right' %>
+    </div>
   <% end %>
 </div>

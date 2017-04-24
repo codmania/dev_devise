@@ -471,17 +471,32 @@
     max-width: 500px;
     margin: auto;
   }
+}
 
-  .actions {
-    text-align: right;
-    input[type="submit"] {
-      padding: 7px 20px;
-      border-radius: 4px;
-      color: #fff;
-      background-color: #75ce66;
-      border: none;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    }
+.actions {
+  text-align: right;
+  input[type="submit"] {
+    padding: 7px 20px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #75ce66;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
   }
 }
 
+.authform {
+  .actions {
+    display: inline-block;
+    float: right;
+  }
+
+  .checkbox {
+    display: inline-block;
+  }
+}
+
+.forgot-group {
+  clear: both;
+  display: block;
+}
