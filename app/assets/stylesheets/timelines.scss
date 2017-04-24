@@ -500,3 +500,20 @@
   clear: both;
   display: block;
 }
+
+.add-timeline {
+  text-align: right;
+
+  a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #75ce66;
+    border-radius: 4px;
+  }
+}
+
+.group-wrapper {
+  max-width: 500px;
+  margin: auto;
+}
+

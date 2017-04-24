@@ -5,6 +5,18 @@ class EventsController < ApplicationController
     redirect_to timeline_path(@timeline)
   end
 
+  def edit
+    @timeline = Timeline.find(params[:timeline_id])
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @timeline = Timeline.find(params[:timeline_id])
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    redirect_to timeline_path(@timeline)
+  end
+
   def destroy
     @timeline = Timeline.find(params[:timeline_id])
     @event = @timeline.events.find(params[:id])
