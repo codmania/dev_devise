@@ -1,0 +1,23 @@
+<section>
+  <div class="group-wrapper">
+    <h2>EVENT: <%= @event.title %>
+      <%=link_to edit_timeline_event_path(@timeline, @event) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+    </h2>
+
+    <div class="event-group">
+      <label>Description</label>
+      <p><%= @event.description %></p>
+    </div>
+
+    <div class="event-group">
+      <label>Due Date</label>
+      <p><%= @event.duedate %></p>
+    </div>
+
+    <%=link_to timeline_path(@timeline) do %>
+      <span class="glyphicon glyphicon-menu-left"></span>&nbsp;Back
+    <% end %>
+  </div>
+</section>

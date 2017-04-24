@@ -11,6 +11,8 @@ class TimelinesController < ApplicationController
   # GET /timelines/1
   # GET /timelines/1.json
   def show
+    @timeline = Timeline.find(params[:id])
+    @events = @timeline.events.order(:duedate)
   end
 
   # GET /timelines/new

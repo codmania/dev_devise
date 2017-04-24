@@ -10,6 +10,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def show
+    @timeline = Timeline.find(params[:timeline_id])
+    @event = Event.find(params[:id])
+  end
+
   def update
     @timeline = Timeline.find(params[:timeline_id])
     @event = Event.find(params[:id])

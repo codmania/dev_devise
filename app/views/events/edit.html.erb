@@ -18,13 +18,30 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :duedate %><br>
-          <%= f.datetime_field :duedate, :class => 'form-control' %>
+          <label>Due Date</label>
+          <div class='input-group date' id='duedatePicker'>
+              <input type='text' class="form-control" name="event[duedate]" id="event_duedate" type="datetime" required />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
         </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#duedatePicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm A'
+                });
+            });
+        </script>
 
         <div class="actions">
           <%= f.submit %>
         </div>
+      <% end %>
+
+      <%=link_to timeline_path(@timeline) do %>
+        <span class="glyphicon glyphicon-menu-left"></span>&nbsp;Back
       <% end %>
 
     </div>
