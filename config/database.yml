@@ -19,5 +19,3 @@ production:
   encoding: unicode
   database: timeline_production
   pool: 5
-  username: postgres
-  password: 
