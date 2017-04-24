@@ -20,4 +20,4 @@ production:
   database: timeline_production
   pool: 5
   username: postgres
-  password: postgres
+  password: 
