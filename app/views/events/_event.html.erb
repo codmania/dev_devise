@@ -1,0 +1,18 @@
+<div class="cd-timeline-block">
+  <div class="cd-timeline-img cd-picture">
+    <img src="/assets/event.png" alt="Event">
+  </div>
+
+  <div class="cd-timeline-content">
+    <h2><%= event.title %></h2>
+    <p><%= event.description %></p>
+    <a href="#0" class="cd-read-more">Read more</a>
+    <span class="cd-date"><%= event.duedate.strftime("%b %d") %></span>
+    <span class="close">
+      <%= link_to '', [event.timeline, event],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+    </span>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="timeline-title">TIMELINE: <%= @timeline.name %></h2>
+
+<section id="cd-timeline" class="cd-container">
+  <%= render @timeline.events %>
+</section>
+
+<section class="normal-form">
+  <div class="container">
+    <div class="normal-form__wrapper">
+      <h3>
+        <span class="glyphicon glyphicon-calendar"></span>
+        Add Your Event
+      </h3>
+      <%= render 'events/form' %>
+    </div>
+  </div>
+</section>
+
+<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
+<%= link_to 'Back', timelines_path %>

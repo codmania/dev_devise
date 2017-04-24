@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+$roboto: 'Roboto', serif;
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: $roboto;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+  background-color: #eee;
+}
+
+.footer {
+  height: 50px;
+  padding-top: 5px;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+}
+
+p, ol, ul, td {
+  font-family: $roboto;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main {
+  display: block;
+  position: relative;
+  background-color: #eee;
+  padding: 50px 30px;
+}
+
+.landing-hero {
+  img {
+    width: 100%;
+  }
+}
+
+h2.landing-welcome {
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
