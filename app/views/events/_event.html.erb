@@ -5,8 +5,12 @@
 
   <div class="cd-timeline-content">
     <h2><%= event.title %></h2>
-    <p class="event-desc"><%= event.description %></p>
-    <%= link_to 'Read More', timeline_event_path(event.timeline, event), :class => "cd-read-more" %>
+    <p class="event-desc" style="display: none;"><%= event.description %></p>
+    <p class="event-desc-short"><%=h truncate(event.description, :length => 200) %></p>
+
+    <a href="javascript:void(0)" class="cd-read-more">Read More</a>
+    <button type="button" class="cd-read-less btn btn-primary" style="display: none;">Brief View</button>
+
     <span class="cd-date"><%= event.duedate.strftime("%b %d") %></span>
     <span class="close">
       <%= link_to '', [event.timeline, event],
@@ -16,3 +20,22 @@
   </div>
 
 </div>
+
+<!-- <script type="text/javascript">
+  $(function() {
+    $('.cd-read-more').click(function() {
+      var wrapper = $(this).parents()[0];
+      $(wrapper).find('.event-desc').show();
+      $(wrapper).find('.event-desc-short').hide();
+      $(wrapper).find('.cd-read-less').show();
+      $(this).hide();
+    });
+    $('.cd-read-less').click(function() {
+      var wrapper = $(this).parents()[0];
+      $(wrapper).find('.event-desc').hide();
+      $(wrapper).find('.event-desc-short').show();
+      $(wrapper).find('.cd-read-more').show();
+      $(this).hide();
+    });
+  });
+</script> -->

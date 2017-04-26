@@ -3,13 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  events = $('.event-desc')
-  staticLen = 250
-  i = 0
-  while i < events.length
-    str = $(events[i]).text()
-    if str.length > staticLen
-      str = str.substring(0, staticLen) + '...'
-      $(events[i]).text str
-    i++
+  $('.cd-read-more').click ->
+    wrapper = $(this).parents()[0]
+    $(wrapper).find('.event-desc').show()
+    $(wrapper).find('.event-desc-short').hide()
+    $(wrapper).find('.cd-read-less').show()
+    $(this).hide()
+    return
+  $('.cd-read-less').click ->
+    wrapper = $(this).parents()[0]
+    $(wrapper).find('.event-desc').hide()
+    $(wrapper).find('.event-desc-short').show()
+    $(wrapper).find('.cd-read-more').show()
+    $(this).hide()
+    return
   return

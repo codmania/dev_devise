@@ -556,3 +556,27 @@ h2 {
     }
   }
 }
+
+.cd-read-less {
+  float: right;
+  background-color: #75ce66 !important;
+  border: 0 !important;
+}
+
+.cd-read-less,
+.cd-read-more {
+  min-width: 100px;
+}
+
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-less {
+      float: right;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-content .cd-read-less {
+      float: left;
+  }
+}
+
