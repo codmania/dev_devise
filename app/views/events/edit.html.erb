@@ -17,6 +17,8 @@
           <%= f.text_area :description, :class => 'form-control' %>
         </div>
 
+        <input id="duedate" type="hidden" value="<%= @event.duedate.strftime('%Y-%m-%d') %>">
+
         <div class="form-group">
           <label>Due Date</label>
           <div class='input-group date' id='duedatePicker'>
@@ -36,6 +38,7 @@
                 event.preventDefault();
                 return false;
               });
+              $('input#event_duedate').val($('input#duedate').val());
             });
         </script>
 
