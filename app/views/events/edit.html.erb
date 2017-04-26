@@ -21,7 +21,6 @@
           <label>Due Date</label>
           <div class='input-group date' id='duedatePicker'>
               <input type='text' class="form-control" name="event[duedate]" id="event_duedate" type="datetime" required />
-              <span class="overlay"></span>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -30,9 +29,13 @@
 
         <script type="text/javascript">
             $(function () {
-                $('#duedatePicker').datetimepicker({
-                  format: 'YYYY-MM-DD'
-                });
+              $('#duedatePicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+              });
+              $('#duedatePicker').keypress(function(event) {
+                event.preventDefault();
+                return false;
+              });
             });
         </script>
 
