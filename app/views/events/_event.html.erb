@@ -5,7 +5,7 @@
 
   <div class="cd-timeline-content">
     <h2><%= event.title %></h2>
-    <p><%= event.description %></p>
+    <p class="event-desc"><%= event.description %></p>
     <%= link_to 'Read More', timeline_event_path(event.timeline, event), :class => "cd-read-more" %>
     <span class="cd-date"><%= event.duedate.strftime("%b %d") %></span>
     <span class="close">
@@ -16,3 +16,5 @@
   </div>
 
 </div>
+
+
