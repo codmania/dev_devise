@@ -427,39 +427,6 @@
   .cd-date {
     padding: .5em 0;
   }
-
-  .close {
-    a {
-      width: 44px;
-      height: 40px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: transparent;
-
-      &::before,
-      &::after {
-        content: '';
-        width: 22px;
-        height: 2px;
-        background: #777;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        margin: auto;
-        -webkit-transition: background .2s;
-        transition: background .2s;
-      }
-      &::before {
-        transform: rotate(-45deg);
-      }
-      &::after {
-        transform: rotate(45deg);
-      }
-    }
-  }
 }
 
 .normal-form {
@@ -580,3 +547,22 @@ h2 {
   }
 }
 
+.action-group {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  a {
+    span {
+      margin: 0;
+      padding: 0;
+      color: #aaa;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 16px;
+    }
+  }
+}

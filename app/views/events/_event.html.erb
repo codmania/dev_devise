@@ -12,11 +12,15 @@
     <button type="button" class="cd-read-less btn btn-primary" style="display: none;">Brief View</button>
 
     <span class="cd-date"><%= event.duedate.strftime("%b %d") %></span>
-    <span class="close">
-      <%= link_to '', [event.timeline, event],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-    </span>
+    <div class="action-group">
+      <%= link_to edit_timeline_event_path(event.timeline, event) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <%= link_to [event.timeline, event], method: :delete,
+               data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
+    </div>
   </div>
 
 </div>
