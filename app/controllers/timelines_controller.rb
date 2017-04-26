@@ -4,8 +4,7 @@ class TimelinesController < ApplicationController
   # GET /timelines
   # GET /timelines.json
   def index
-    # @timelines = Timeline.all
-    @timelines = current_user.timelines
+    @timelines = Timeline.all
   end
 
   # GET /timelines/1
