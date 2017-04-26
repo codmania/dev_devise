@@ -562,3 +562,35 @@ h2 {
   }
 }
 
+.modal-header {
+  button {
+    width: 44px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: #777;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      -webkit-transition: background .2s;
+      transition: background .2s;
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}
