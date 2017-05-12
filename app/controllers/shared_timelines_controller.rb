@@ -2,11 +2,16 @@ class SharedTimelinesController < ApplicationController
   def create
     @timeline = Timeline.find(params[:timeline_id])
     @shared_timelines = @timeline.shared_timelines
-    @share = @timeline.shared_timelines.build(share_params)
-    if @share.save
-      flash[:notice] = 'Timeline is successfully shared'
+
+    if valid_share
+      @share = @timeline.shared_timelines.build(share_params)
+      if @share.save
+        flash[:notice] = 'Timeline is successfully shared'
+      else
+        flash[:danger] = @share.errors.full_messages[0]
+      end
     else
-      flash[:danger] = @share.errors.full_messages[0]
+      flash[:danger] = 'You can not share a timeline with you'
     end
 
     redirect_to timeline_shared_timelines_path(@timeline, @shared_timelines)
@@ -31,6 +36,10 @@ class SharedTimelinesController < ApplicationController
   end
 
   private
+    def valid_share
+      current_user.email != params[:shared_timeline][:email]
+    end
+
     def share_params
       {
         user_id: current_user.id,

@@ -47,6 +47,26 @@
             </td>
           </tr>
         <% end %>
+
+        <% @shared_timelines.each do |timeline| %>
+          <tr>
+            <td class="timeline-name">
+              <h5>
+                <%= link_to timeline do %>
+                  <%= timeline.name %>
+                <% end %>
+              </h5>
+            </td>
+            <td>
+              <%= link_to timeline do %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+              <% end %>
+            </td>
+            <td>_</td>
+            <td>_</td>
+            <td>_</td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
 
