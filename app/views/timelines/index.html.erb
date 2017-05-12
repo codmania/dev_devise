@@ -10,6 +10,7 @@
           <th>Name</th>
           <th>Show</th>
           <th>Edit</th>
+          <th>Share</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -26,12 +27,17 @@
             </td>
             <td>
               <%= link_to timeline do %>
-                <span class="glyphicon glyphicon-new-window"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
               <% end %>
             </td>
             <td>
               <%= link_to edit_timeline_path(timeline) do %>
                 <span class="glyphicon glyphicon-pencil"></span>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to timeline_shared_timelines_path(timeline) do %>
+                <span class="glyphicon glyphicon-share"></span>
               <% end %>
             </td>
             <td>
@@ -53,4 +59,3 @@
     </div>
   </div>
 </section>
-

@@ -1,0 +1,35 @@
+<section>
+  <div class="group-wrapper">
+    <div class="share-form">
+      <%= render 'form' %>
+    </div>
+
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Email</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @shared_timelines.each_with_index do |share, index| %>
+          <tr>
+            <td class="timeline-name">
+              <h5><%= index + 1 %></h5>
+            </td>
+            <td>
+              <%= share.email %>
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-trash"></span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+

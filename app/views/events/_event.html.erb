@@ -11,7 +11,7 @@
     <a href="javascript:void(0)" class="cd-read-more">Read More</a>
     <button type="button" class="cd-read-less btn btn-primary" style="display: none;">Brief View</button>
 
-    <span class="cd-date"><%= event.duedate.strftime("%b %d") %></span>
+    <span class="cd-date"><%= event.duedate.strftime("%b %d, %Y") %></span>
     <div class="action-group">
       <%= link_to edit_timeline_event_path(event.timeline, event) do %>
         <span class="glyphicon glyphicon-pencil"></span>

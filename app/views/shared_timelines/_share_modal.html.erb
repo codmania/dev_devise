@@ -1,0 +1,48 @@
+<div id="shareModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title">
+          <span class="glyphicon glyphicon-share"></span>&nbsp;
+          Share Timeline
+        </h4>
+      </div>
+
+      <div class="modal-body modal-event">
+        <%= render 'form' %>
+
+        <div class="shared-group">
+          <hr />
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td class="timeline-name">
+                    1
+                  </td>
+                  <td>
+                    hello@world.com
+                  </td>
+                  <td>
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </td>
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -28,6 +28,10 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-rescue'
+  gem "letter_opener"
 end
 group :development, :test do
   gem 'factory_girl_rails'
