@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h2 class="timeline-title">TIMELINE: <%= @timeline.name %></h2>
+<h3 class="timeline-title">
+  <span class="glyphicon glyphicon-time"></span>
+  <span>TIMELINE: <%= @timeline.name %></span>
+</h3>
 
 <section id="cd-timeline" class="cd-container">
   <%= render @events %>

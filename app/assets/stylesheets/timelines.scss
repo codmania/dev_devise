@@ -582,4 +582,12 @@ a[data-toggle="modal"] {
   padding-right: 50px;
 }
 
+h3.timeline-title {
+  span {
+    vertical-align: middle;
+  }
+  span.glyphicon-time {
+    color: green;
+  }
+}
 

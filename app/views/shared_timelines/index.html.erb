@@ -1,9 +1,15 @@
 <section>
   <div class="group-wrapper">
+    <h3 class="timeline-title">
+      <span class="glyphicon glyphicon-time"></span>
+      <span>Timeline: <%= @timeline.name %></span>
+    </h3>
+
     <div class="share-form mt30">
       <%= render 'form' %>
     </div>
 
+    <h3>Listing shares</h3>
     <table class="table table-responsive">
       <thead>
         <tr>
