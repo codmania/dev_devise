@@ -6,15 +6,19 @@
   <%= render @events %>
 </section>
 
-<section class="normal-form">
-  <div class="container">
-    <div class="normal-form__wrapper text-center">
-      <button type="button" class="btn btn-success btn-event" data-toggle="modal" data-target="#eventModal">ADD EVENT</button>
-    </div>
-  </div>
-</section>
+<% if is_owner?(current_user, @timeline) %>
 
-<%= render 'events/new_modal' %>
+  <section class="normal-form">
+    <div class="container">
+      <div class="normal-form__wrapper text-center">
+        <button type="button" class="btn btn-success btn-event" data-toggle="modal" data-target="#eventModal">ADD EVENT</button>
+      </div>
+    </div>
+  </section>
+
+  <%= render 'events/new_modal' %>
+
+<% end %>
 
 <script type="text/javascript">
   $(function() {
