@@ -142,3 +142,34 @@ tbody {
   }
 }
 
+// notification style goes here
+
+.alert {
+  max-width: 300px;
+  display: inline-block;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  padding: 10px !important;
+  color: #fff !important;
+  border: none !important;
+
+  #flash_notice,
+  button {
+    color: #fff;
+  }
+}
+
+.alert-success {
+  background-color: #3aab3b !important;
+}
+
+.alert-danger {
+  background-color: #d64b48 !important;
+}
+
+
+.mt30 {
+  margin-top: 30px;
+}
+
