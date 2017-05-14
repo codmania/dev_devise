@@ -8,6 +8,7 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>Status</th>
           <th>Show</th>
           <th>Edit</th>
           <th>Share</th>
@@ -24,6 +25,12 @@
                   <%= timeline.name %>
                 <% end %>
               </h5>
+            </td>
+            <td class="status-cell">
+              <span class="<%= get_status_icon(timeline) %>"></span>
+              <span class="status-cell__name">
+                <%= timeline.timeline_status.try(:name) %>
+              </span>
             </td>
             <td>
               <%= link_to timeline do %>
@@ -56,6 +63,12 @@
                   <%= timeline.name %>
                 <% end %>
               </h5>
+            </td>
+            <td>
+              <span class="<%= get_status_icon(timeline) %>"></span>
+              <span>
+                <%= timeline.timeline_status.try(:name) %>
+              </span>
             </td>
             <td>
               <%= link_to timeline do %>

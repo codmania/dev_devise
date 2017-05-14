@@ -624,3 +624,33 @@ h3.timeline-title {
   }
 }
 
+.status-cell {
+  span {
+    vertical-align: middle;
+  }
+  .glyphicon {
+    font-size: 16px;
+  }
+
+  .glyphicon-flag {
+    color: green;
+  }
+
+  .glyphicon-remove {
+    color: #e8e830;
+  }
+
+  &__name {
+    color: #555;
+    font-size: 14px;
+  }
+}
+
+.add-timeline {
+  a:hover,
+  a:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+

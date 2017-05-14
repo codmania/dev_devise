@@ -30,7 +30,6 @@ class TimelinesController < ApplicationController
   # POST /timelines
   # POST /timelines.json
   def create
-    binding.pry
     @timeline = current_user.timelines.build(timeline_params)
     respond_to do |format|
       if @timeline.save
