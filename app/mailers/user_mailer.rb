@@ -1,9 +1,19 @@
 class UserMailer < ApplicationMailer
   default from: 'notifications@timeline.com'
 
-  def share_timeline_email(user)
+  def share_timeline_email(user, share, timeline)
     @user = user
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    @share = share
+    @timeline = timeline
+
+    recipient = User.find_by(email: @share.email)
+    @registered = false
+    if recipient
+      @registered = true
+    end
+
+    subject = 'Timeline was shared with you'
+    mail(to: @share.email, subject: subject)
   end
 
 end

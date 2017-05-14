@@ -29,7 +29,6 @@ class TimelinesController < ApplicationController
   # POST /timelines.json
   def create
     @timeline = current_user.timelines.build(timeline_params)
-    UserMailer.share_timeline_email(current_user).deliver_now
     respond_to do |format|
       if @timeline.save
         format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }

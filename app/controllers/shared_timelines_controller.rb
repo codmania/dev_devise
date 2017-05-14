@@ -7,6 +7,7 @@ class SharedTimelinesController < ApplicationController
       @share = @timeline.shared_timelines.build(share_params)
       if @share.save
         flash[:notice] = 'Timeline is successfully shared'
+        UserMailer.share_timeline_email(current_user, @share, @timeline).deliver_now
       else
         flash[:danger] = @share.errors.full_messages[0]
       end
