@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514022519) do
+ActiveRecord::Schema.define(version: 20170514030304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(version: 20170514022519) do
     t.string   "title"
     t.text     "description"
     t.datetime "duedate"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "timeline_id"
+    t.integer  "event_status_id"
   end
 
+  add_index "events", ["event_status_id"], name: "index_events_on_event_status_id", using: :btree
   add_index "events", ["timeline_id"], name: "index_events_on_timeline_id", using: :btree
 
   create_table "shared_timelines", force: :cascade do |t|
@@ -49,11 +51,13 @@ ActiveRecord::Schema.define(version: 20170514022519) do
 
   create_table "timelines", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
+    t.integer  "timeline_status_id"
   end
 
+  add_index "timelines", ["timeline_status_id"], name: "index_timelines_on_timeline_status_id", using: :btree
   add_index "timelines", ["user_id"], name: "index_timelines_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -76,6 +80,8 @@ ActiveRecord::Schema.define(version: 20170514022519) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "events", "event_statuses"
   add_foreign_key "events", "timelines"
+  add_foreign_key "timelines", "timeline_statuses"
   add_foreign_key "timelines", "users"
 end

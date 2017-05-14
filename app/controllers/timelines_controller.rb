@@ -20,6 +20,7 @@ class TimelinesController < ApplicationController
   # GET /timelines/new
   def new
     @timeline = Timeline.new
+    @statues = TimelineStatus.all
   end
 
   # GET /timelines/1/edit
