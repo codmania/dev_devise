@@ -5,6 +5,13 @@
 
   <div class="cd-timeline-content">
     <h2><%= event.title %></h2>
+
+    <% if event.event_status %>
+      <span class="event-status">
+        (Status: <%= event.event_status.try(:name) %>)
+      </span>
+    <% end %>
+
     <p class="event-desc" style="display: none;"><%= event.description %></p>
     <p class="event-desc-short"><%=h truncate(event.description, :length => 200) %></p>
 

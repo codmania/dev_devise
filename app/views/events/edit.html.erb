@@ -29,6 +29,11 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <%= f.label 'Status' %><br>
+          <%= f.collection_select(:event_status_id, EventStatus.all, :id, :name) %>
+        </div>
+
         <script type="text/javascript">
             $(function () {
               $('#duedatePicker').datetimepicker({
