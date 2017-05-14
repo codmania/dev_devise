@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @timeline = Timeline.find(params[:timeline_id])
     @event = @timeline.events.create(event_params)

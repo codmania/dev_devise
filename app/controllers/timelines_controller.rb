@@ -1,4 +1,5 @@
 class TimelinesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_timeline, only: [:show, :edit, :update, :destroy]
 
   # GET /timelines
