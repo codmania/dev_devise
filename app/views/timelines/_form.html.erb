@@ -13,7 +13,12 @@
 
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, :class => 'form-control' %>
+    <%= f.text_field :name, :class => 'form-control', :required => 'true' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Status' %><br>
+    <%= f.collection_select(:timeline_status_id, TimelineStatus.all, :id, :name) %>
   </div>
 
   <div class="actions">

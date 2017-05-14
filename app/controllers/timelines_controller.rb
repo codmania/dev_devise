@@ -20,7 +20,7 @@ class TimelinesController < ApplicationController
   # GET /timelines/new
   def new
     @timeline = Timeline.new
-    @statues = TimelineStatus.all
+    @statues = TimelineStatus.all.map { |status| [status.name, status.id] }
   end
 
   # GET /timelines/1/edit
@@ -30,6 +30,7 @@ class TimelinesController < ApplicationController
   # POST /timelines
   # POST /timelines.json
   def create
+    binding.pry
     @timeline = current_user.timelines.build(timeline_params)
     respond_to do |format|
       if @timeline.save
@@ -74,6 +75,6 @@ class TimelinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timeline_params
-      params.require(:timeline).permit(:name)
+      params.require(:timeline).permit(:name, :timeline_status_id)
     end
 end
