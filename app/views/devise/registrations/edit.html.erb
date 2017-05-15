@@ -36,6 +36,11 @@
       </div>
     </fieldset>
 
+    <div class="form-group">
+      <%= f.label :timezone %>
+      <%= f.time_zone_select :timezone %>
+    </div>
+
     <div class="actions">
       <%= f.submit 'Update', :class => 'button' %>
     </div>
