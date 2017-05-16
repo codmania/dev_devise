@@ -5,7 +5,7 @@ class TimelinesController < ApplicationController
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.all
+    @timelines = current_user.timelines
     shared_ids = SharedTimeline.where(email: current_user.email).pluck(:timeline_id)
     @shared_timelines = Timeline.where(id: shared_ids)
   end
