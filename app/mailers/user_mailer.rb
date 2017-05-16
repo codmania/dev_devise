@@ -14,6 +14,7 @@ class UserMailer < ApplicationMailer
 
     subject = 'Timeline was shared with you'
     mail(to: @share.email, subject: subject)
+    puts '____welcome #{@share.email}'
   end
 
 end
