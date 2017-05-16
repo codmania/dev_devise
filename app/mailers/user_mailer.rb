@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'goldensoftdev@gmail.com'
+  # default from: 'goldensoftdev@gmail.com'
 
   def share_timeline_email(user, share, timeline)
     @user = user
