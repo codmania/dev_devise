@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @share = share
     @timeline = timeline
-    binding.pry
+
     recipient = User.find_by(email: @share.email)
     @registered = false
     if recipient
