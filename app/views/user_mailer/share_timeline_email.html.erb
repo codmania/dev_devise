@@ -4,30 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1 style="text-align: center;">
-      Timeline was shared with you
-    </h1>
-    <p>
-      <%= @user.name %> has shared his Timeline: <%= @timeline.name %> with you.
-    </p>
-
-    <% if @registered == true %>
-      <p>
-        Visit the shared timeline 
-        <%= link_to 'here', timeline_path(@timeline) %>
-      </p>
-    <% else %>
-      <p>
-        Visit the shared timeline 
-        <%= link_to 'here', new_user_registration_path %>
-      </p>
-    <% end %>
-
-    <p style="text-align: center;margin-top: 20px;">
-      If you don't have account, join us <%= link_to 'here', new_user_registration_path %>
-      <br>
-      Thanks for joining and have a great day!
-    </p>
+  Hello world
 
   </body>
 </html>
