@@ -16,10 +16,14 @@
     <%= f.text_field :name, :class => 'form-control', :required => 'true' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label 'Status' %><br>
-    <%= f.collection_select(:timeline_status_id, TimelineStatus.all, :id, :name) %>
-  </div>
+  <% if current_page?(new_timeline_path) %>
+    <%= f.hidden_field :timeline_status_id, :value => 1 %>
+  <% else %>
+    <div class="form-group">
+      <%= f.label 'Status' %><br>
+      <%= f.collection_select(:timeline_status_id, TimelineStatus.all, :id, :name) %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
