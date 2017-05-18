@@ -77,11 +77,11 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: "goldensoftdev@gmail.com",
+    password: "poseidon88"
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => ENV["HOST"] }
+  config.action_mailer.default_url_options = { :host => 'https://dev-timeline.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
