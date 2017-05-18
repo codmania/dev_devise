@@ -19,17 +19,18 @@
       <% if @registered == true %>
         <p>
           Visit the shared timeline 
-          <%= link_to 'here', timeline_path(@timeline), :host => "#{ENV['HOST']}", :only_path => false %>
+          <a href="<%= @timeline_url %>">here</a>
         </p>
       <% else %>
         <p>
           Visit the shared timeline 
-          <%= link_to 'here', new_user_registration_path %>
+          <a href="<%= @signup_url %>">here</a>
         </p>
       <% end %>
 
       <p style="text-align: center;margin-top: 40px;">
-        If you don't have account, join us <%= link_to 'here', new_user_registration_path %>
+        If you don't have account, join us 
+        <a href="<%= @signup_url %>">here</a>
         <br>
         Thanks for joining and have a great day!
       </p>

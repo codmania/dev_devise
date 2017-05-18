@@ -6,6 +6,9 @@ class UserMailer < ApplicationMailer
     @share = share
     @timeline = timeline
 
+    @signup_url = ENV["HOST"] + '/users/sign_up'
+    @timeline_url = ENV["HOST"] + '/timelines/' + @timeline.id
+
     recipient = User.find_by(email: @share.email)
     @registered = false
     if recipient
