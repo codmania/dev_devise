@@ -72,16 +72,16 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
+    address: "smtp.gmail.com",
     port: 587,
-    domain: "herokuapp.com",
+    domain: ENV["DOMAIN"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "GoldenTech",
-    password: "triton88"
+    user_name: ENV["SENDGRID_USERNAME"],
+    password: ENV["SENDGRID_PASSWORD"]
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'dev-timeline.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => ENV["HOST"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
