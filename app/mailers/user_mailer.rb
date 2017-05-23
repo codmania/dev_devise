@@ -21,4 +21,22 @@ class UserMailer < ApplicationMailer
     mail(to: @share.email, subject: subject)
   end
 
+  def send_reminder_email(timeline, event)
+    @timeline = timeline
+    @event = event
+    @shares = SharedTimeline.where(timeline_id: @timeline.id)
+
+    # TODO: this should be refactored
+    host = 'https://dev-timeline.herokuapp.com'
+    @signup_url = host + '/users/sign_up'
+    @timeline_url = host + '/timelines/' + @timeline.id.to_s
+
+    subject = 'Event will be expired soon!'
+    mail(to: @timeline.user.email, subject: subject)
+
+    @shares.each do |share|
+      mail(to: share.email, subject: subject)
+    end
+  end
+
 end

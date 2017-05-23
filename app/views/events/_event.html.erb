@@ -22,9 +22,14 @@
 
     <% if is_owner?(current_user, @timeline) %>
       <div class="action-group">
+        <%= link_to send_reminder_path(timeline_id: event.timeline, id: event) do %>
+          <span class="glyphicon glyphicon-volume-up"></span>
+        <% end %>
+
         <%= link_to edit_timeline_event_path(event.timeline, event) do %>
           <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
+
         <%= link_to [event.timeline, event], method: :delete,
                  data: { confirm: 'Are you sure?' } do %>
           <span class="glyphicon glyphicon-remove"></span>

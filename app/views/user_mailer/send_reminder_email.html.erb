@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div style="max-width: 500px;
+                margin: auto;
+                background-color: #eee;
+                padding: 30px 50px;">
+
+      <h1 style="text-align: center;margin-bottom: 40px;">
+        The Event will be end soon!
+      </h1>
+      <p>
+        The event <%= @event.title %> of <%= @timeline.name %> timeliine will be end at <%= @event.duedate.strftime("%b %d, %Y") %>.
+      </p>
+
+      <% if @registered == true %>
+        <p>
+          Visit the timeline 
+          <a href="<%= @timeline_url %>">here</a>
+        </p>
+      <% else %>
+        <p>
+          Visit the timeline 
+          <a href="<%= @signup_url %>">here</a>
+        </p>
+      <% end %>
+
+      <p style="text-align: center;margin-top: 40px;">
+        If you don't have account, join us 
+        <a href="<%= @signup_url %>">here</a>
+        <br>
+        Thanks for joining and have a great day!
+      </p>
+    </div>
+
+  </body>
+</html>

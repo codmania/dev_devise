@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     resources :shared_timelines
   end
 
+  get 'send_reminder', to: 'events#send_reminder'
+  post 'send_reminder', to: 'events#send_reminder'
+
 end
