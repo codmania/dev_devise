@@ -32,11 +32,12 @@ class UserMailer < ApplicationMailer
     @timeline_url = host + '/timelines/' + @timeline.id.to_s
 
     subject = 'Event will be expired soon!'
-    mail(to: @timeline.user.email, subject: subject)
 
-    @shares.each do |share|
-      mail(to: share.email, subject: subject)
-    end
+    mail(
+      to: @shares.map(&:email).uniq,
+      subject: subject
+    )
+
   end
 
 end
