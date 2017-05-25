@@ -31,10 +31,13 @@ class UserMailer < ApplicationMailer
     @signup_url = host + '/users/sign_up'
     @timeline_url = host + '/timelines/' + @timeline.id.to_s
 
+    recipients = @shares.map(&:email).uniq
+    recipients << @timeline.user.email
+
     subject = 'Event will be expired soon!'
 
     mail(
-      to: @shares.map(&:email).uniq,
+      to: recipients,
       subject: subject
     )
 
